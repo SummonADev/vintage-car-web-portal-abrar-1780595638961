@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #d4af37;
+  --color-gold-dark: #b8972e;
+  --color-navy: #1a1a2e;
+  --color-navy-light: #16213e;
+  --color-cream: #f5f0e8;
+  --color-wine: #8b0000;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background-color: #f5f0e8;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
