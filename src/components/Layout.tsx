@@ -1,7 +1,7 @@
-import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
-import { Car, Gavel, LogIn, LogOut, Plus, List } from 'lucide-react';
+import { Gavel, LogIn, LogOut, Plus, List } from 'lucide-react';
+import VCCPLogo from '@/components/VCCPLogo';
 
 export default function Layout() {
   const { user, signOut } = useAuth();
@@ -10,9 +10,12 @@ export default function Layout() {
     <div className="min-h-screen flex flex-col">
       <header className="bg-navy text-cream py-4 px-6 shadow-lg">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-gold text-2xl font-bold no-underline">
-            <Car size={32} />
-            <span>Vintage Car Collective</span>
+          <Link to="/" className="flex items-center gap-3 no-underline">
+            <VCCPLogo size={42} />
+            <div className="flex flex-col">
+              <span className="text-gold text-2xl font-bold leading-tight">VCCP</span>
+              <span className="text-cream text-xs tracking-widest opacity-80">Vintage Car Collective Portal</span>
+            </div>
           </Link>
           <nav className="flex items-center gap-6">
             <Link to="/browse" className="text-cream no-underline hover:text-gold transition-colors">Browse</Link>
@@ -47,7 +50,11 @@ export default function Layout() {
         <Outlet />
       </main>
       <footer className="bg-navy text-cream py-6 px-6 text-center text-sm">
-        <p>&copy; {new Date().getFullYear()} Vintage Car Collective. All rights reserved.</p>
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <VCCPLogo size={24} />
+          <span className="text-gold font-bold">VCCP</span>
+        </div>
+        <p>&copy; {new Date().getFullYear()} Vintage Car Collective Portal. All rights reserved.</p>
       </footer>
     </div>
   );
